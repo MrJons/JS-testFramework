@@ -1,5 +1,10 @@
-describe('custom testing framework', function(){
-  it('has a equal matcher', function(){
+describe('Custom Testing Framework & Matchers', function(){
+
+  beforeEach(function(){
+    console.log('     This is the first before block');
+  });
+
+  it('has an equal matcher', function(){
     expect(equal(5,5));
     expect(equal(5,10));
   });
@@ -14,7 +19,7 @@ describe('custom testing framework', function(){
     expect(contains('string', 'x'));
   });
 
-  it('has a array contains matcher', function(){
+  it('has an array contains matcher', function(){
     expect(contains([1,2,3], 2));
     expect(contains([1,2,3], 4));
   });
@@ -22,5 +27,23 @@ describe('custom testing framework', function(){
   it('has a notContains matcher', function(){
     expect(notContains('string', 'x'));
     expect(notContains('string', 'i'));
+  });
+
+  describe('Nested beforeBlocks',function(){
+    it('nests before blocks if not reassigned',function(){
+    });
+  });
+  describe('Nested & Reassigned beforeBlocks',function(){
+    beforeEach(function(){
+      console.log('     This is a different before block');
+    });
+
+    it('does not nest before blocks if reassigned',function(){
+    });
+  });
+});
+
+describe('No beforeBlock',function(){
+  it('has no before blocks if not reassigned nor nested',function(){
   });
 });
