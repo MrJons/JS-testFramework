@@ -1,0 +1,22 @@
+#tests {
+
+}
+
+body {
+  font-family: 'Space Mono';
+  font-size: 1.2em;
+}
+
+li {
+  list-style: none;
+  padding-left: 3em;
+
+}
+
+li#fail {
+  color: red;
+}
+
+li#pass {
+  color: #0AC92B;
+}
